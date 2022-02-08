@@ -1,0 +1,32 @@
+{
+  "name": "web3-shell",
+  "version": "1.0.0",
+  "description": "web3",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "babel web3/ -d dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhangyi999/web3-shell.git"
+  },
+  "keywords": ["web3","eth"],
+  "author": "zBtc_999",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.16.7",
+    "@babel/core": "^7.16.7",
+    "babel-preset-es2015": "^6.24.1",
+    "@babel/preset-env": "^7.16.7"
+  },
+  "dependencies": {
+    "bignumber.js": "^9.0.2",
+    "web3": "^1.6.1"
+  },
+  "bugs": {
+    "url": "https://github.com/zhangyi999/web3-shell/issues"
+  },
+  "homepage": "https://github.com/zhangyi999/web3-shell#readme"
+}
+
