@@ -42,9 +42,25 @@ function setDefaultProvider({
 let web3; // getDefault provider
 
 function getDefaultProvider() {
-  return new _web.default.providers.HttpProvider(defaultProvider.rpc, {
-    ethereumNodeTimeout: 5000
-  });
+  let provider;
+
+  try {
+    if (window.ethereum) {
+      provider = window.ethereum;
+    } else if (window.web3) {
+      provider = window.web3.currentProvider;
+    } else {
+      provider = new _web.default.providers.HttpProvider(defaultProvider.rpc, {
+        ethereumNodeTimeout: 5000
+      });
+    }
+  } catch (error) {
+    provider = new _web.default.providers.HttpProvider(defaultProvider.rpc, {
+      ethereumNodeTimeout: 5000
+    });
+  }
+
+  return provider;
 } // set Provider
 
 

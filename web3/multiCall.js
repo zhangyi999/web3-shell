@@ -11,10 +11,11 @@ function proxy(obj, key, call) {
     })
 }
 
+let mulSupplementary = multiCallAddress
 function MultiCallContract() {
     const web3 = initWeb3()
     const chainId = web3.currentProvider.chainId
-    const address = multiCallAddress[chainId*1]
+    const address = mulSupplementary[chainId*1]
     if ( !address ) throw new Error(`chainId ${chainId} multi_call address not configured`)
     return nweContract( address, MULTI_CALL )
 }
@@ -82,4 +83,9 @@ export async function multiCalls(methodsObj,...options) {
     calls = await multiCallArr(calls,...options)
     if ( pro.length > 0 ) pro = await Promise.all(pro)
     return callsIndex
+}
+
+// {chainId: address}
+export function addMultiCall(chainConfig = {}) {
+    mulSupplementary = {...mulSupplementary, ... chainConfig}
 }

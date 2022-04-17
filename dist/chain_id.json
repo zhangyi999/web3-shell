@@ -1,0 +1,18 @@
+{
+    "1": "main",
+    "2": "ropsten",
+    "3": "rinkeby",
+    "100": "xDai",
+    "56": "bsc",
+    "66": "okc",
+    "65": "tOkc",
+    "256": "tHeco",
+    "128": "heco",
+    "1337": "bsc",
+    "31337": "bsc",
+    "1001": "tKlaytn",
+    "8217": "klaytn",
+    "137": "polygon",
+    "80001": "tPolygon",
+    "200": "xDai"
+}

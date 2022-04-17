@@ -5,9 +5,9 @@ const {
     initWeb3
 } = require('../dist')
 
-
-const node1 = newWeb3('https://bsc-dataseed1.binance.org')
-
+// 1.13.15.154
+const node1 = newWeb3('http://1.13.15.154:18545')
+// https://eth-mainnet.alchemyapi.io/v2/Efj4nBC3ZWIMTt_FnL68RCYaeVO9JWhi
 async function main() {
     
     console.log(

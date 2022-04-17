@@ -13,6 +13,8 @@ export * from './BigNumber'
 
 export * from './initWeb3'
 
+export * from './chain_id.json'
+
 export const decimalHex = '0x' + (1e18).toString(16) 
 
 

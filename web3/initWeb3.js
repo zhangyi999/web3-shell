@@ -25,12 +25,30 @@ let web3
 
 // getDefault provider
 export function getDefaultProvider ( ) {
-    return new Web3.providers.HttpProvider(
-        defaultProvider.rpc,
-        {
-            ethereumNodeTimeout: 5000,
+    let provider;
+    try {
+        if (window.ethereum) {
+            provider = (window.ethereum)
+        } else if (window.web3) {
+            provider = (window.web3.currentProvider)
+        } else {
+            provider = new Web3.providers.HttpProvider(
+                defaultProvider.rpc,
+                {
+                    ethereumNodeTimeout: 5000,
+                }
+            )
         }
-    )
+    } catch (error) {
+        provider = new Web3.providers.HttpProvider(
+            defaultProvider.rpc,
+            {
+                ethereumNodeTimeout: 5000,
+            }
+        )
+    }
+    return provider
+    
 }
 
 // set Provider
