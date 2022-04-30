@@ -28,10 +28,9 @@ function SendOn(methods, options = {}) {
 
   async function estimateGas() {
     try {
-      const gas = await methods.estimateGas(owner);
-      console.log({
-        gas
-      });
+      const gas = await methods.estimateGas(owner); // console.log({gas})
+
+      owner.gas = Math.floor(gas * 1.15);
       if (pro === null) pro = methods.send(owner);
       return [null, 1];
     } catch (err) {
